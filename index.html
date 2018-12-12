@@ -2,7 +2,7 @@
     <head><title>node viewer</title></head>
     <link rel="stylesheet" href="css/background.css">
     <body>
-        <script type ="text/javascript" src="js/node.js"></script>
+        <script type ="text/javascript" src="js/node_view.js"></script>
         <script type= "text/javascript" src="js/div_util.js"></script>
         <div id = "TopMenu" style="position:absolute; left:10px; top:10px; width:190px; height:25; background-color:#01DFD7; border:2px solid green;">
         <input type="button" value="Create node" onClick="ToggleLayer('CreateNode')">
@@ -12,7 +12,7 @@
             <form>
                 node name:      <input type="text" name="NodeName"></br>
                 parent node ID: <input type="text" name="Pid"></br></br>
-                <input type="button" value="Create Root" name="CrateRoot">
+                <input type="button" value="Create Root" onClick="CreateRoot()">
                 <input type="button" value="Create node">
                 <input type="button" value="Back" onClick="ToggleLayer('CreateNode')">
             </form>
@@ -25,6 +25,7 @@
             </form>
         
         </div>
+        <canvas id="NodeCanvas" height="600" width="1000">this browser can not support canvas</canvas>
 
     </body>
 </html>

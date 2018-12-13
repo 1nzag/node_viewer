@@ -4,28 +4,29 @@
     <body>
         <script type ="text/javascript" src="js/node_view.js"></script>
         <script type= "text/javascript" src="js/div_util.js"></script>
-        <div id = "TopMenu" style="position:absolute; left:10px; top:10px; width:190px; height:25; background-color:#01DFD7; border:2px solid green;">
+        <div id = "TopMenu" style="position:absolute; left:10px; top:10px; width:290px; height:25; background-color:#01DFD7; border:2px solid green;">
         <input type="button" value="Create node" onClick="ToggleLayer('CreateNode')">
         <input type="button" value="Delete node" onClick="ToggleLayer('DeleteNode')">
+        <input type="button" value="Clean Tree" onClick="CleanAll()">
         </div>
         <div id="CreateNode" style="position:absolute; left:10px; top:10px; width:300px; height:100; background-color:#01DFD7; border:2px solid green; display:none" >  
             <form>
-                node name:      <input type="text" name="NodeName"></br>
-                parent node ID: <input type="text" name="Pid"></br></br>
+                node name:      <input type="text" id="NodeName"></br>
+                parent node ID: <input type="text" id="Pid"></br></br>
                 <input type="button" value="Create Root" onClick="CreateRoot()">
-                <input type="button" value="Create node">
+                <input type="button" value="Create node" onClick="AddNode(Pid.value, NodeName.value)">
                 <input type="button" value="Back" onClick="ToggleLayer('CreateNode')">
             </form>
         </div>
         <div id="DeleteNode" style="position:absolute; left:10px; top:10px; width:300px; height:100; background-color:#01DFD7; border:2px solid green; display:none">
             <form>
-                node id: <input type="text" name="Pid"></br></br>
-                <input type="button" value="Delete node">
+                node id: <input type="text" id="Did"></br></br>
+                <input type="button" value="Delete node" onClick="DeleteNode(Did.value)">
                 <input type="button" value="Back" onClick="ToggleLayer('DeleteNode')">
             </form>
         
         </div>
-        <canvas id="NodeCanvas" height="600" width="1000">this browser can not support canvas</canvas>
+        <canvas id="NodeCanvas" height="900" width="1800">this browser can not support canvas</canvas>
 
     </body>
 </html>
